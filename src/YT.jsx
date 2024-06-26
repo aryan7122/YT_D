@@ -1,9 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { FiDownload } from "react-icons/fi";
-// import { saveAs } from "file-saver";
 import "./styles.css";
-// import loadingGif from "https://cdn.pixabay.com/animation/2022/07/29/03/42/03-42-11-849_512.gif";  // Make sure the path to the GIF is correct
 
 const YT = () => {
     const [urlValue, setUrlValue] = useState("");
@@ -27,6 +25,7 @@ const YT = () => {
             setData(response.data);
             setUrlValue("");
             setLoading(false);
+            console.log('response', response)
         } catch (error) {
             console.error("Error downloading the video:", error);
             setLoading(false);
@@ -116,7 +115,7 @@ const YT = () => {
                         </div>
                     </div>
                 ) : (
-                    !loading && <div className="no-download"><img src="https://media.tenor.com/8cViuZ78BC4AAAAi/play-youtube.gif" alt="" id="noData_gif"/></div>
+                    !loading && <div className="no-download"><img src="https://media.tenor.com/8cViuZ78BC4AAAAi/play-youtube.gif" alt="" id="noData_gif" /></div>
                 )}
             </div>
         </div>
