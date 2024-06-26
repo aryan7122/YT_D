@@ -10,10 +10,7 @@ const YT = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (urlValue.trim() === '') {
-            alert('Please enter YouTube URL');
-            return;
-        }
+       
         // Handle form submission logic here
     };
 
