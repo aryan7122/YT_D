@@ -318,10 +318,11 @@ body {
     justify-content: center;
     position: absolute;
     /* margin-top: -50px; */
-    background: #ff51629e;
+    background: #ff5162b9;
     font-size: 20px;
     padding: 10px;
-    color: #D30302;
+    color: #f20202;
+    text-shadow: 0px 0px 10px white;
     border-radius: 10px;
     animation: zigzag 0.5s ease-in-out forwards;
     box-shadow: 0px 0px 10px 0.2px #D30302;
