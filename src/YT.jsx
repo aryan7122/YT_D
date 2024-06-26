@@ -60,7 +60,9 @@ const YT = () => {
                     </h1>
                 </div>
                 <div className="input-group">
+                    {isurl === '' ? '' :
                     <span id="isurl">{isurl}</span>
+                    }
                     <input
                         onSubmit={handleSubmit}
                         type="text"
