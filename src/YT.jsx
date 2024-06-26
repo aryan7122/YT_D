@@ -7,24 +7,34 @@ const YT = () => {
     const [urlValue, setUrlValue] = useState("");
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(false);
+    const [isurl, setIsurl] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
-       
-        // Handle form submission logic here
     };
+    // Function to clear isurl state every 3 seconds
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setIsurl('');  // Update state here
+        }, 3000);
 
+        return () => clearInterval(interval);
+    }, []);
     const handleDownload = async () => {
+        if (urlValue==='') {
+            setIsurl('⛔ URL Cannot be empty')
+            return
+        }
         try {
             setLoading(true);
             // const response = await axios.get(`http://localhost:4000/download?url=${urlValue}`);
             const response = await axios.get(`https://ytd-234f.onrender.com/download?url=${urlValue}`);
+            console.log('response', response)
             setData(response.data);
             setUrlValue("");
             setLoading(false);
-            console.log('response', response)
         } catch (error) {
-            console.error("Error downloading the video:", error);
+            console.error('error', error);
             setLoading(false);
         }
     };
@@ -50,6 +60,7 @@ const YT = () => {
                     </h1>
                 </div>
                 <div className="input-group">
+                    <span id="isurl">{isurl}</span>
                     <input
                         onSubmit={handleSubmit}
                         type="text"
