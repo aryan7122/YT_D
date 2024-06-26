@@ -34,7 +34,8 @@ const YT = () => {
             setUrlValue("");
             setLoading(false);
         } catch (error) {
-            console.error('error', error);
+            console.error('error', error.response.data.error);
+            setIsurl(error.response.data.error)
             setLoading(false);
         }
     };
