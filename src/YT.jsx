@@ -115,7 +115,7 @@ const YT = () => {
                         </div>
                     </div>
                 ) : (
-                    !loading && <div className="no-download"><img src="https://media.tenor.com/8cViuZ78BC4AAAAi/play-youtube.gif" alt="" /></div>
+                    !loading && <div className="no-download"><img src="https://media.tenor.com/8cViuZ78BC4AAAAi/play-youtube.gif" alt="" id="noData_gif"/></div>
                 )}
             </div>
         </div>
