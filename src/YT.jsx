@@ -28,7 +28,8 @@ const YT = () => {
         try {
             setLoading(true);
             // const response = await axios.get(`http://localhost:4000/download?url=${urlValue}`);
-            const response = await axios.get(`https://ytd-234f.onrender.com/download?url=${urlValue}`);
+            // const response = await axios.get(`https://ytd-234f.onrender.com/download?url=${urlValue}`);
+            const response = await axios.get(`https://ytd-vk52.vercel.app/download?url=${urlValue}`);
             console.log('response', response)
             setData(response.data);
             setUrlValue("");
